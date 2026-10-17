@@ -1,0 +1,65 @@
+@import '@fontsource/hind-siliguri/400.css';
+@import '@fontsource/hind-siliguri/500.css';
+@import '@fontsource/hind-siliguri/600.css';
+@import '@fontsource/hind-siliguri/700.css';
+
+@import '@fontsource/noto-serif-bengali/600.css';
+@import '@fontsource/noto-serif-bengali/700.css';
+
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F6F3EC;
+    color: #1B2420;
+    font-family: 'Hind Siliguri', sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-bn {
+    font-family: 'Noto Serif Bengali', serif;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom ledger vertical margin line */
+.ledger-margin-line {
+  position: relative;
+}
+.ledger-margin-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 36px;
+  width: 1.5px;
+  background-color: #E29587;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Stamped seal style */
+.stamp-seal {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #2D7A4E;
+  color: #2D7A4E;
+  padding: 4px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: rotate(-10deg);
+  background-color: rgba(226, 241, 231, 0.85);
+  box-shadow: 0 2px 8px rgba(45, 122, 78, 0.15);
+  user-select: none;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "somiti-collection",
+  "version": "1.0.0",
+  "description": "সমিতি কালেকশন - দৈনিক কালেকশন ও হিসাব ব্যবস্থাপনা",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"green,cyan\" \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "migrate": "npm run migrate --workspace=backend",
+    "seed:admin": "npm run seed:admin --workspace=backend",
+    "seed:demo": "npm run seed:demo --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
