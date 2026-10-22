@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Eye, EyeOff, Lock, Send, AlertCircle } from 'lucide-react';
+import { Eye, EyeOff, Lock, Send, AlertCircle, ShieldCheck, Smartphone, CheckCircle2 } from 'lucide-react';
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -91,19 +91,41 @@ export default function LoginPage() {
             মাঠকর্মী এক পাতায় পুরো সমিতির জমা তুলবেন, আর প্রত্যেক সদস্যের মোবাইলে সাথে সাথে পৌঁছে যাবে জমার SMS।
           </p>
 
-          {/* KPI Snapshot Cards */}
-          <div className="flex flex-wrap items-center gap-4 mt-8">
-            <div className="bg-forest-medium/60 border border-forest-light/60 rounded-card p-4 max-w-[230px]">
-              <span className="text-[11px] text-mint/80 block">আজকের SMS</span>
-              <p className="text-xs text-white mt-1 leading-snug font-medium">
-                রহিমা বেগম, আজ ৳ ২০০ জমা হয়েছে। মোট জমা ৳ ১২,৪০০।
-              </p>
+          {/* System Highlights / Trust Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mt-8 max-w-lg">
+            <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 flex flex-col justify-between hover:bg-white/15 transition-all">
+              <div className="w-8 h-8 rounded-lg bg-mint/20 border border-mint/30 flex items-center justify-center text-mint mb-2.5">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-white tracking-wide">সুরক্ষিত লেজার</h4>
+                <p className="text-[11px] text-mint/80 mt-1 leading-snug">
+                  অপরিবর্তনীয় হিসাব ও পূর্ণাঙ্গ অডিট ট্রেইল
+                </p>
+              </div>
             </div>
 
-            <div className="bg-saffron text-ink rounded-card p-4 min-w-[170px] shadow-sm">
-              <span className="text-[11px] text-ink/80 block font-medium">আজকের কালেকশন</span>
-              <div className="text-2xl font-bold font-mono-num mt-1 text-ink">
-                ৳ ৮৬,৪৫০
+            <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 flex flex-col justify-between hover:bg-white/15 transition-all">
+              <div className="w-8 h-8 rounded-lg bg-saffron/20 border border-saffron/30 flex items-center justify-center text-saffron mb-2.5">
+                <Smartphone className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-white tracking-wide">মোবাইল ফিল্ডওয়ার্ক</h4>
+                <p className="text-[11px] text-mint/80 mt-1 leading-snug">
+                  মাঠে স্মার্টফোনে দ্রুত সঞ্চয় ও কিস্তি এন্ট্রি
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3.5 flex flex-col justify-between hover:bg-white/15 transition-all">
+              <div className="w-8 h-8 rounded-lg bg-ok/20 border border-ok/30 flex items-center justify-center text-ok mb-2.5">
+                <CheckCircle2 className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-white tracking-wide">স্বয়ংক্রিয় SMS</h4>
+                <p className="text-[11px] text-mint/80 mt-1 leading-snug">
+                  কালেকশন নিশ্চিতের সাথে সাথে নিশ্চিতকরণ বার্তা
+                </p>
               </div>
             </div>
           </div>
